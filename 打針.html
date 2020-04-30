@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei';
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .out {
+            margin: auto;
+            width: 600px;
+            height: 100px;
+            border: 1px solid rgb(105, 105, 105);
+            background: linear-gradient(0deg, #e9e9e9 0%, #cccccc 35%, #e9e9e9 60%);
+            border-bottom-right-radius: 5%;
+            border-top-right-radius: 5%;
+            position: relative;
+        }
+
+        .out::before {
+            content: '';
+            width: 50px;
+            height: 150px;
+            border: 1px solid rgb(105, 105, 105);
+            background: linear-gradient(0deg, #e9e9e9 0%, #cccccc 35%, #e9e9e9 60%);
+            position: absolute;
+            top: 0;
+            left: -50px;
+            transform: translate(0%, -20%);
+        }
+
+        .out::after {
+            content: '';
+            width: 100px;
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(0%, 0%);
+        }
+
+        .in {
+            width: 500px;
+            height: 150px;
+            border: 1px solid rgb(105, 105, 105);
+            background: linear-gradient(0deg, #e9e9e9 0%, #cccccc 35%, #e9e9e9 60%);
+            margin: auto;
+            transform: translate(0%, -20%);
+            color: #8b8b8b;
+            line-height: 260px;
+        }
+
+        .in::before {
+            content: '';
+            width: 250px;
+            height: 150px;
+            background: linear-gradient(90deg, black 0%, black 15%, #ebeb9d 15%, #ebeb9d 100%);
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(0%, 0%);
+            mix-blend-mode: darken;
+        }
+
+        .in::after {
+            content: '';
+            width: 500px;
+            height: 20px;
+            /* width: 50px; */
+            /* height: 150px; */
+            /* background: black; */
+            background-image: repeating-linear-gradient(90deg, black 0, black 2px, #e9e9e9 0, #e9e9e9 20px);
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(0%, 0%);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in">made in taiwan</div>
+    </div>
+</body>
+
+</html>
